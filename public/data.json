@@ -1,0 +1,86 @@
+[
+    {
+        "name":"White CS",
+        "description":"Front Brake: Disc Brake | Rear Brake: Disc Brake |Frame Material: Steel Cycle/Mild steel Cycle | Tire Size: 27.5 inches | Frame Size:18 inches |Age Group",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product16_f996b4d3-b7d2-4a6e-9fbd-a430d3143e19.jpg?v=1608082060",
+        "price":"210"
+        
+    },
+    {
+        "name":"Mustard Sport",
+        "description":"Gear: 21 Gear| Gear Type: Easy Fire Shifters/Thumb Shifters| Tire Size: 27.5 inches | Frame Size:18 inches |Age Group",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/07/p6.jpg",
+        "price":"190"
+        
+    },
+    {
+        "name":"Pink Biframes",
+        "description":"Age Group: 15+ Years | Ideal For: Boys, Men/Women",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/07/p15.jpg",
+        "price":"180"
+        
+    },
+    {
+        "name":"Blue Biframes",
+        "description":"Tire Size: 27.5 inches | Frame Size:18 inches |Age Group: 15+ Years | Age Group: 13+ Years | Ideal For: Boys/Me",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product6_6d883936-4e26-4d9a-93b7-63837f78bf88.jpg?v=1608081784",
+        "price":"220"
+        
+    },
+    {
+        "name":"Red CS",
+        "description":"Age Group: 13+ Years | Ideal For: Boys/Men Tire Size: 27.5 inches | Frame Size:18 inches |Age Group",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product5_d2330394-8374-4080-86f6-d131dafef040.jpg?v=1608081728",
+        "price":"321"
+        
+    },
+    {
+        "name":"Yellow DB",
+        "description":"Gear: 21 Gear| Gear Type: Easy Fire Shifters/Thum Shifters Front Brake: Wire Brake | Rear Brake: Wire Brake",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/07/p4.jpg",
+        "price":"232"
+        
+    },
+    {
+        "name":"Silver DB",
+        "description":"Frame Material: Steel Cycle/Mild steel Cycle        Suspension: Dual Suspension",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product15_e805e1b0-a9ea-4b4a-981c-baf6c09b51b7.jpg?v=1608082102",
+        "price":"222"
+        
+    },
+    {
+        "name":"White Sport",
+        "description":"Frame Material: Steel Cycle/Mild steel |Suspension: Suspension Tire Size: 26 inches | Frame Size:18 inches",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/07/p6.jpg",
+        "price":"132"
+        
+    },
+    {
+        "name":"Mustard Sport",
+        "description":"Gear: 21 Gear| Gear Type: Easy Fire Shifters/Thum Shifters Front Brake: Wire Brake | Rear Brake: Wire Brake",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product4_c8009f9f-cf65-4e2d-82b4-9ab18259b2fe.jpg?v=1608081655",
+        "price":"232"
+        
+    },
+    {
+        "name":"Blue CS",
+        "description":"Frame Material: Steel Cycle/Mild steel |Suspension: Suspension Tire Size: 26 inches | Frame Size:18 inches",
+        "img":"https://cdn.shopify.com/s/files/1/0517/6675/5520/products/product3_088179d9-6d45-424c-9cba-5113d4cfd1ca.jpg?v=1608081612",
+        "price":"333"
+        
+    },
+    {
+        "name":"Silver DB",
+        "description":"Gear: 21 Gear| Gear Type: Easy Fire Shifters/Thum Shifters Front Brake: Wire Brake | Rear Brake: Wire Brake",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/05/p9.jpg",
+        "price":"353"
+        
+    },
+    {
+        "name":"Purple DB",
+        "description":"Frame Material: Steel Cycle/Mild steel |Suspension: Suspension Tire Size: 26 inches | Frame Size:18 inches",
+        "img":"http://demo.sunrisetheme.com/html-velo/img/uploads/2015/07/p8.jpg",
+        "price":"231"
+        
+    }
+]
