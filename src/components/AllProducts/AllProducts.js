@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import './HomeProducts.css'
 
-const HomeProducts = () => {
+const AllProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -15,11 +14,11 @@ const HomeProducts = () => {
     }, [])
     return (
         <div>
-            <h2>New Products</h2>
+            <h2>Available All Products</h2>
             <div className="products-container container justify-content-center row">
            
                {
-                    products.slice(0,6).map(product => <div className="single-product col-md-4 col-sm-12">
+                    products.map(product => <div className="single-product col-md-4 col-sm-12">
                         <div>
                             <img width="100%" src={product.img} alt="" />
                         </div>
@@ -38,4 +37,4 @@ const HomeProducts = () => {
     );
 };
 
-export default HomeProducts;
+export default AllProducts;

@@ -1,0 +1,33 @@
+.contact-box{
+    background-color: #D10B22;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 40px;
+
+}
+.contact-left{
+    background-color: #535fc896;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    color: white;
+    
+}
+.contact-right{
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 30px;
+}
+.contact-right input,textarea{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightsteelblue;
+}

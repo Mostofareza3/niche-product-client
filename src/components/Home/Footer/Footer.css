@@ -1,0 +1,30 @@
+.footer-container{
+    background-color: #FF7F47;
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    margin-top: 50px;
+}
+.footer-part{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.footer-container li{
+    list-style: none;
+    cursor: pointer;
+}
+.icon-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.icon-container i{
+    display: flex;
+    align-items: flex-start;
+    margin-right: 20px;
+    font-size: 30px;
+}
+.icon-container i:hover{
+    cursor: pointer;
+}
