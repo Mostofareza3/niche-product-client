@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Nav, Navbar,Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user,logOut  } = useAuth({});
+    const { user, logOut } = useAuth({});
     return (
         <div className="mb-5">
             <Navbar bg="dark" fixed="top" variant="dark">
@@ -13,19 +13,25 @@ const Navigation = () => {
                     <Nav className="me-auto">
                         <NavLink className="nav-link" to="/home">Home</NavLink>
                         <NavLink className="nav-link" to="/allProducts">All Products</NavLink>
-                        <NavLink className="nav-link" to="/login">Login</NavLink>
+                        {user.email && <NavLink className="nav-link" to="/myOrders">MyOrders</NavLink>}
+                        {user.email && <NavLink className="nav-link" to="/dashBoard">DashBoard</NavLink>}
 
                     </Nav>
                     <Nav>
+
                         {
-                            user.email ? <>
-                                <Button onClick={logOut} className="btn btn-danger">Log Out</Button>
-                                <Nav.Link eventKey={2} href="#memes">
-                                    {
-                                        user?.displayName
-                                    }
-                                </Nav.Link>
-                            </> : ''
+                            user.email ?
+
+                                 <>
+                                    <Button onClick={logOut} className="btn btn-danger">Log Out</Button>
+                                    <Nav.Link eventKey={2} href="#memes">
+                                        {
+                                            user?.displayName
+                                        }
+                                    </Nav.Link>
+                                </>:
+                    <NavLink className="nav-link" to="/login">Login</NavLink>
+
                         }
                     </Nav>
                 </Container>

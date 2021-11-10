@@ -35,12 +35,13 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false))
     }
-    const signUpWithEmailPassword = (email, password, name) => {
+    const signUpWithEmailPassword = (email, password, history, location) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setError('')
                 setUser(result.user);
+                history.push(location || '/home')
                 window.location.reload();
 
             })
