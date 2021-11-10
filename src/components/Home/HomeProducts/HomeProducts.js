@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './HomeProducts.css'
 
 const HomeProducts = () => {
@@ -10,16 +12,16 @@ const HomeProducts = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                
+
             })
     }, [])
     return (
         <div>
             <h2>New Products</h2>
             <div className="products-container container justify-content-center row">
-           
-               {
-                    products.slice(0,6).map(product => <div className="single-product col-md-4 col-sm-12">
+
+                {
+                    products.slice(0, 6).map(product => <div key={product._id} className="single-product col-md-4 col-sm-12">
                         <div>
                             <img width="100%" src={product.img} alt="" />
                         </div>
@@ -27,7 +29,13 @@ const HomeProducts = () => {
                             <h4>{product.name}</h4>
                             <p>{product.description}</p>
                             <h5>Price: ${product.price}</h5>
-                        <Button className="btn btn-success">Book Now</Button>
+                            <Link to={`/placeOrder/${product._id}`}>
+                                <Button
+                                 className="btn btn-success">
+                                     Book Now
+                                     </Button>
+
+                            </Link>
 
                         </div>
                     </div>)
