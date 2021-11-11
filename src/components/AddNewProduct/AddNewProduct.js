@@ -5,7 +5,15 @@ import { useForm } from "react-hook-form";
 const AddNewProduct = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        fetch('http://localhost:5000/addNewProduct',{
+            method: "POST",
+            headers:{
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
     };
 
     return (
