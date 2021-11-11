@@ -6,8 +6,19 @@
   }
   .dashboard-menu {
    background-color: rgb(218, 194, 163);
+   list-style: none;
+   font-size: 20px;
+   border: 1px solid white;
+   padding: 10px;
+   background-color: rgb(30, 112, 104);
+   color: white;
   }
-  .dashboard-menu:hover {
-    color: cyan;
+  .dashboard-menu:hover{
+    color: rgb(22, 170, 170);
+  }
+  
+  .link-container{
+    display: flex;
+    flex-direction: column;
   }
  

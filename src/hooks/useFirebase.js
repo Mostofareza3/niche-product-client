@@ -1,5 +1,5 @@
 import initializeAuthentication from "../firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged,updateProfile } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged,updateProfile,getIdToken } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -12,6 +12,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
     let [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState('');
 
     const signInUsingGoogle = (location, history) => {
         setIsLoading(true)
@@ -83,16 +85,26 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        setIsLoading(true)
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
+                setUser(user);
+                getIdToken(user)
+                    .then(idToken => {
+                        setToken(idToken);
+                    })
             } else {
-                setError('')
+                setUser({})
             }
-        setIsLoading(false)
+            setIsLoading(false);
         });
+        return () => unsubscribed;
     }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user?.email])
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
@@ -114,7 +126,8 @@ const useFirebase = () => {
         logOut,
         user,
         error,
-        isLoading
+        isLoading,
+        admin
     }
 };
 

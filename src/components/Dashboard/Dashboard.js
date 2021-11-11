@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import AddNewProduct from "../AddNewProduct/AddNewProduct";
 import Review from "../Home/Reviews/Review";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
 // import AddServices from "./../AddServices/AddServices";
@@ -14,21 +17,7 @@ import './DashBoard.css'
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const { user } = useAuth();
-    //   const [isAdmi, setIsAdmin] = useState(false);
-
-    //   useEffect(() => {
-    //     fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         if (data[0]?.role === "admin") {
-    //           setIsAdmin(true);
-    //         } else {
-    //           setIsAdmin(false);
-    //         }
-    //       });
-    //   }, [user?.email]);
-    //   console.log(isAdmi);
+    const { user, admin, logOut } = useAuth();
     return (
         <div className="margin-t">
             <div className="dashboard-container">
@@ -36,36 +25,39 @@ const Dashboard = () => {
                     <div className="col-md-3 ">
                         <div className="dashboard text-center">
                             <h3>Dashboard</h3>
-                            <div className="text-justify">
+                            <div className="text-justify link-container">
 
-                                <Link to={`${url}/myOrders`}>
-                                    <p className="dashboard-menu">My Orders</p>
-                                </Link>
+                                <NavLink to={`${url}/myOrders`}>
+                                    <li className="dashboard-menu">My Orders</li>
+                                </NavLink>
 
+                                <NavLink to={`${url}/pay`}>
+                                    <li className="dashboard-menu">Pay</li>
+                                </NavLink>
+                                <NavLink to={`${url}/review`}>
+                                    <li className="dashboard-menu">Review</li>
+                                </NavLink>
                                 <Link to={`${url}/pay`}>
-                                    <p className="dashboard-menu">Pay</p>
-                                </Link>
-                                <Link to={`${url}/review`}>
-                                    <p className="dashboard-menu">Review</p>
-                                </Link>
-                                <Link to={`${url}/pay`}>
-                                    <p className="dashboard-menu">Logout</p>
+                                    <li onClick={logOut} className="dashboard-menu">Logout</li>
                                 </Link>
                             </div>
-                            <div className="admin-dashboard">
-                                <li className="dashboard-menu mt-5">Log Out</li>
+                            <div className="admin-dashboard mt-3">
+                                {
+                                    admin && <>
+                                        <Link to={`${url}/makeAdmin`}>
+                                            <li className="dashboard-menu">Make Admin</li>
+                                        </Link>
+                                        <Link to={`${url}/manageAllProducts`}>
+                                            <li className="dashboard-menu">Manage All Products</li>
+                                        </Link>
+                                        <Link to={`${url}/addNewProduct`}>
+                                            <li className="dashboard-menu">Add New Product</li>
+                                        </Link>
 
-                                {/* {isAdmi && (
-                  <Link to={`${url}/addService`}>
-                    <li className="dashboard-menu">Add Service</li>
-                  </Link>
-                )} */}
-                                <Link to={`${url}/makeAdmin`}>
-                                    <li className="dashboard-menu">Make Admin</li>
-                                </Link>
-                                <Link to={`${url}/manageServices`}>
-                                    <li className="dashboard-menu">Manage Service</li>
-                                </Link>
+                                    </>
+
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -85,18 +77,16 @@ const Dashboard = () => {
                             <Route exact path={`${path}/review`}>
                                 <Review></Review>
                             </Route>
-                            {/* <Route exact path={`${path}/BookingList`}>
-                <MyBookings></MyBookings>
-              </Route>
-              <Route exact path={`${path}/makeAdmin`}>
-                <MakeAdmin></MakeAdmin>
-              </Route>
-              <Route exact path={`${path}/addService`}>
-                <AddServices></AddServices>
-              </Route>
-              <Route exact path={`${path}/manageServices`}>
-                <ManageServices></ManageServices>
-              </Route> */}
+
+                            <Route exact path={`${path}/makeAdmin`}>
+                                <MakeAdmin></MakeAdmin>
+                            </Route>
+                            <Route exact path={`${path}/manageAllProducts`}>
+                                <ManageAllProducts></ManageAllProducts>
+                            </Route>
+                            <Route exact path={`${path}/addNewProduct`}>
+                             <AddNewProduct></AddNewProduct>
+                            </Route>
                         </Switch>
                     </div>
                 </div>
