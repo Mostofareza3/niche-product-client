@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './AllProduct.css'
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ const AllProducts = () => {
             })
     }, [])
     return (
-        <div>
+        <div className="margin-t">
             <h2>Available All Products</h2>
             <div className="products-container container justify-content-center row">
            

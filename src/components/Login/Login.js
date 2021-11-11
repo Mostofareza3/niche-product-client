@@ -9,7 +9,7 @@ import './Login.css'
 const Login = () => {
     const history = useHistory();
     const location = useLocation()
-    const redirect_url = location?.state?.from || '/home';
+    // const redirect_url = location?.state?.from || '/home';
 
 
     const { signInUsingGoogle, signInWithEmailPassword, error } = useFirebase();
@@ -30,16 +30,20 @@ const Login = () => {
         setPassword(e.target.value)
     }
 
-    const handleGoogleLogIn = () =>{
-        signInUsingGoogle()
-        .then((result) => {
-            // setUser(result.user)
-            history.push(redirect_url)
+    // const handleGoogleLogIn = () =>{
+    //     signInUsingGoogle()
+    //     .then((result) => {
+    //         // setUser(result.user)
+    //         history.push(redirect_url)
 
-        }).catch((error) => {
-            // setError(error.message)
+    //     }).catch((error) => {
+    //         // setError(error.message)
 
-        });
+    //     });
+    // }
+    
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle(location, history)
     }
 
 
@@ -56,7 +60,7 @@ const Login = () => {
                     <input className="submit-button" type="Submit" value="Continue" />
                 </form>
                 <p className="text-center my-3">----------or------------</p>
-                <button onClick={handleGoogleLogIn} className="google-login-button" ><i className="fab fa-google mx-2"></i>Google log in</button>
+                <button onClick={handleGoogleSignIn} className="google-login-button" ><i className="fab fa-google mx-2"></i>Google log in</button>
                 <p className="text-center my-3">New to Bike Store?<Link to="/signUp">Sing Up</Link> </p>
                 
             </div>

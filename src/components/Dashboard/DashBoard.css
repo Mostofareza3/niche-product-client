@@ -1,0 +1,13 @@
+.dashboard {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    cursor: pointer;
+  }
+  .dashboard-menu {
+   background-color: rgb(218, 194, 163);
+  }
+  .dashboard-menu:hover {
+    color: cyan;
+  }
+ 

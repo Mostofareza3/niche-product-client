@@ -6,14 +6,14 @@ import useAuth from '../../../hooks/useAuth';
 const Navigation = () => {
     const { user, logOut } = useAuth({});
     return (
-        <div className="mb-5">
-            <Navbar bg="dark" fixed="top" variant="dark">
+        <div className="mt-5">
+            <Navbar className="mb-5" bg="dark" fixed="top" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="me-auto">
                         <NavLink className="nav-link" to="/home">Home</NavLink>
                         <NavLink className="nav-link" to="/allProducts">All Products</NavLink>
-                        {user.email && <NavLink className="nav-link" to="/myOrders">MyOrders</NavLink>}
+                       
                         {user.email && <NavLink className="nav-link" to="/dashBoard">DashBoard</NavLink>}
 
                     </Nav>
