@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './AllProduct.css'
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
+    const {admin} = useAuth()
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -28,13 +30,16 @@ const AllProducts = () => {
                             <h4>{product.name}</h4>
                             <p>{product.description}</p>
                             <h5>Price: ${product.price}</h5>
-                            <Link to={`/placeOrder/${product._id}`}>
-                                <Button
-                                 className="btn btn-success">
-                                     Book Now
-                                     </Button>
+                           {
+                               !admin &&
+                                 <Link to={`/placeOrder/${product._id}`}>
+                               <Button
+                                className="btn btn-success">
+                                    Book Now
+                                    </Button>
 
-                            </Link>
+                           </Link>
+                           }
 
                         </div>
                     </div>)

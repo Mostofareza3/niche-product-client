@@ -5,6 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import './HomeProducts.css'
 
 const HomeProducts = () => {
+    const {admin} = useAuth()
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -29,13 +30,16 @@ const HomeProducts = () => {
                             <h4>{product.name}</h4>
                             <p>{product.description}</p>
                             <h5>Price: ${product.price}</h5>
-                            <Link to={`/placeOrder/${product._id}`}>
-                                <Button
-                                 className="btn btn-success">
-                                     Book Now
-                                     </Button>
+                           {
+                               !admin && 
+                               <Link to={`/placeOrder/${product._id}`}>
+                               <Button
+                                className="btn btn-success">
+                                    Book Now
+                                    </Button>
 
-                            </Link>
+                           </Link>
+                           }
 
                         </div>
                     </div>)

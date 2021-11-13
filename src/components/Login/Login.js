@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link , useHistory,useLocation} from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
-// import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 
@@ -9,7 +8,6 @@ import './Login.css'
 const Login = () => {
     const history = useHistory();
     const location = useLocation()
-    // const redirect_url = location?.state?.from || '/home';
 
 
     const { signInUsingGoogle, signInWithEmailPassword, error } = useFirebase();
@@ -19,7 +17,7 @@ const Login = () => {
 
     const handleEmailLogIn = (e) => {
         e.preventDefault()
-        signInWithEmailPassword(email, password)
+        signInWithEmailPassword(email, password, history)
 
     }
 
@@ -29,18 +27,6 @@ const Login = () => {
     const getPassword = (e) => {
         setPassword(e.target.value)
     }
-
-    // const handleGoogleLogIn = () =>{
-    //     signInUsingGoogle()
-    //     .then((result) => {
-    //         // setUser(result.user)
-    //         history.push(redirect_url)
-
-    //     }).catch((error) => {
-    //         // setError(error.message)
-
-    //     });
-    // }
     
     const handleGoogleSignIn = () => {
         signInUsingGoogle(location, history)

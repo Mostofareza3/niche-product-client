@@ -7,13 +7,9 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
-// import AddServices from "./../AddServices/AddServices";
-// import Review from "./../Review/Review";
-// import MyBookings from "./../MyBookings/MyBookings";
-// import MakeAdmin from "./../MakeAdmin/MakeAdmin";
-// import ManageServices from "./../ManageServices/ManageServices";
-// import useFirebase from "./../../Hook/useFirebase";
+import AddReview from "./AddReview/AddReview";
 import './DashBoard.css'
+import EmptyDashBoard from "./EmptyDashBoard";
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -27,19 +23,20 @@ const Dashboard = () => {
                             <h3>Dashboard</h3>
                             <div className="text-justify link-container">
 
-                                <NavLink to={`${url}/myOrders`}>
-                                    <li className="dashboard-menu">My Orders</li>
-                                </NavLink>
+                               {
+                                   !admin && <> <NavLink to={`${url}/myOrders`}>
+                                   <li className="dashboard-menu">My Orders</li>
+                               </NavLink>
 
-                                <NavLink to={`${url}/pay`}>
-                                    <li className="dashboard-menu">Pay</li>
-                                </NavLink>
-                                <NavLink to={`${url}/review`}>
-                                    <li className="dashboard-menu">Review</li>
-                                </NavLink>
-                                <Link to={`${url}/pay`}>
-                                    <li onClick={logOut} className="dashboard-menu">Logout</li>
-                                </Link>
+                               <NavLink to={`${url}/pay`}>
+                                   <li className="dashboard-menu">Pay</li>
+                               </NavLink>
+                               <NavLink to={`${url}/review`}>
+                                   <li className="dashboard-menu">Review</li>
+                               </NavLink>
+                               </>
+                               }
+                                
                             </div>
                             <div className="admin-dashboard mt-3">
                                 {
@@ -57,6 +54,9 @@ const Dashboard = () => {
                                     </>
 
                                 }
+                                <Link to={`${url}/logOut`}>
+                                    <li onClick={logOut} className="dashboard-menu">Logout</li>
+                                </Link>
 
                             </div>
                         </div>
@@ -64,7 +64,7 @@ const Dashboard = () => {
                     <div className="col-md-9">
                         <Switch>
                             <Route exact path={path}>
-                                <MyOrders></MyOrders>
+                                <EmptyDashBoard></EmptyDashBoard>
                             </Route>
 
                             <Route exact path={`${path}/myOrders`}>
@@ -75,7 +75,7 @@ const Dashboard = () => {
                                 <Pay></Pay>
                             </Route>
                             <Route exact path={`${path}/review`}>
-                                <Review></Review>
+                                <AddReview></AddReview>
                             </Route>
 
                             <Route exact path={`${path}/makeAdmin`}>
