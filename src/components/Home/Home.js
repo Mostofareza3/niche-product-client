@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import HomeProducts from './HomeProducts/HomeProducts';
 import Navigation from './Navigation/Navigation';
 import Review from './Reviews/Review';
+import './Home.css'
 
 const Home = () => {
     return (

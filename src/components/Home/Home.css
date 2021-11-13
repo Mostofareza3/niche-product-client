@@ -1,3 +1,9 @@
-.Home{
+/* .Home{
     text-align: center !important
+} */
+.heading{
+    color: #EB1D35;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

@@ -18,7 +18,7 @@ const AllProducts = () => {
     }, [])
     return (
         <div className="margin-t">
-            <h2>Available All Products</h2>
+            <h2 className="heading">Available All Products</h2>
             <div className="products-container container justify-content-center row">
            
                {

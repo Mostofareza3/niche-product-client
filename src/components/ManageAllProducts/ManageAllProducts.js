@@ -31,7 +31,7 @@ const ManageAllProducts = () => {
     console.log(allProducts)
     return (
         <div>
-            <h2>This is Manage All products</h2>
+            <h2 className="heading">This is Manage All products</h2>
             <div className="products-container container justify-content-center row">
            
            {

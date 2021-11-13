@@ -23,7 +23,8 @@ const AddReview = () => {
     return (
     <form onSubmit={handleSubmit(onSubmit)}>
     <input type="text" placeholder="Add Review" {...register("review")} />
-    <input type="number" placeholder="Place Rating (1-5)" {...register("rating")} />
+    <input type="number" placeholder="Place Rating (1-5)" pattern="/^[1-5]$/"
+ {...register("rating")} />
         
     <input type="submit" />
   </form>

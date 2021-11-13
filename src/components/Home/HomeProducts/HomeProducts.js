@@ -18,7 +18,7 @@ const HomeProducts = () => {
     }, [])
     return (
         <div>
-            <h2>New Products</h2>
+            <h2 className="heading">New Products</h2>
             <div className="products-container container justify-content-center row">
 
                 {

@@ -46,16 +46,17 @@ const PlaceOrder = () => {
             <h2>{product.name}</h2>
             <div className="placeOrder-container container-fluid row">
                 <div className="col-md-6 col-sm-12">
-                    <img className="img-fluid" src={product?.img} alt="" />
+                    <img className="img-fluid placeorder-img" src={product?.img} alt="" />
                     <h6>{product.description}</h6>
                 </div>
 
                 <div className="col-md-6 col-sm-12 placeOrder-form-container">
                     <form className="placeOrder-form" onSubmit={handleSubmit(onSubmit)}>
                         <input readOnly defaultValue={user.email} {...register("email")} />
+                        <input readOnly defaultValue={user.displayName} {...register("name")} />
+                        <input required placeholder="Enter Your Mobile Number" {...register("phone")} />
                         
                         <input readOnly defaultValue={product?.name} {...register("productName")} />
-                        <input readOnly defaultValue={product?.description} />
                         <input readOnly defaultValue={`Price: $ ${product?.price}`}  />
 
                         <Button className="btn btn-success" type="submit" >Confirm Order</Button>
