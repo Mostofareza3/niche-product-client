@@ -6,4 +6,9 @@
     font-weight: bold;
     margin-top: 50px;
     margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.highlight{
+    color: #EB1D35;
+    text-transform: uppercase;
 }

@@ -1,0 +1,13 @@
+.addReview-form input{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 400px;
+}
+.addReview-form-container{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -14,7 +14,7 @@ const Banner = () => {
                     />
                     <Carousel.Caption>
                         <h2>Bike STORE</h2>
-                        <h4>Nulla vitae elit libero, a pharetra augue mollis interdum. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                        <h4>Bikes & accessories low priced online✓ save up to 40%✓ various high-end top notch brands in bike Store</h4>
                         <Link to="/allProducts">
                         <Button className="btn btn-danger">Explore Bike STORE</Button>
                         </Link>
@@ -29,7 +29,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h2>Bike STORE</h2>
-                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing ste laudantium nostrum nesciunt, totam inventore necessitatibus.</h4>
+                        <h4>Bikes & accessories low priced online✓ save up to 40%✓ various high-end top notch brands in bike Store</h4>
                         <Link to="/allProducts">
                         <Button className="btn btn-danger">Explore Bike STORE</Button>
                         </Link>

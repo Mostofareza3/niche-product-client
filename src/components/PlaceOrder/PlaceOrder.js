@@ -15,13 +15,14 @@ const PlaceOrder = () => {
 
     
     const onSubmit = data => {
-        console.log(data)
+        data.status= "pending";
+        const {_id, ...rest} = data;
         fetch(`http://localhost:5000/addOrder`,{
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(data) 
+            body: JSON.stringify(rest)
         })
         .then(res=>res.json())
         .then(data=>{
@@ -32,7 +33,6 @@ const PlaceOrder = () => {
         })
     };
 
-//selected item and this this item send to db 
     useEffect(() => {
         fetch(`http://localhost:5000/placeOrder/${id}`)
             .then(res => res.json())
@@ -55,9 +55,9 @@ const PlaceOrder = () => {
                         <input readOnly defaultValue={user.email} {...register("email")} />
                         <input readOnly defaultValue={user.displayName} {...register("name")} />
                         <input required placeholder="Enter Your Mobile Number" {...register("phone")} />
-                        
+
                         <input readOnly defaultValue={product?.name} {...register("productName")} />
-                        <input readOnly defaultValue={`Price: $ ${product?.price}`}  />
+                        <input readOnly defaultValue={`Price: $ ${product?.price}`} />
 
                         <Button className="btn btn-success" type="submit" >Confirm Order</Button>
                     </form>

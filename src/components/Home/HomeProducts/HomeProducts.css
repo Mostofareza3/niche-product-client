@@ -1,20 +1,23 @@
-/* .products-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 15px;
-} */
+.home-product-section{
+    background-color:#F3F7FB;
+}
 .products-container{
     width: 100%;
+   
+
 }
 .single-product{
-    border: 1px solid;
+    border: 1px solid #D10B22;
     padding: 20px;
     width: 300px;
-    margin: 5px;
+    margin: 15px 10px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px black;
+    background-color: white;
     
 }
 .single-product img{
     height: 200px;
-    width: 200px;
+    width: 100%;
     
 }

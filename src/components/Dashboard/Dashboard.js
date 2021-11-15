@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route, Link, useRouteMatch, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import AddNewProduct from "../AddNewProduct/AddNewProduct";
-import Review from "../Home/Reviews/Review";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
@@ -10,6 +9,7 @@ import Pay from "../Pay/Pay";
 import AddReview from "./AddReview/AddReview";
 import './DashBoard.css'
 import EmptyDashBoard from "./EmptyDashBoard";
+import ManageAllOrders from "./ManageAllOrders/ManageAllOrders";
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -34,6 +34,7 @@ const Dashboard = () => {
                                <NavLink to={`${url}/review`}>
                                    <li className="dashboard-menu">Review</li>
                                </NavLink>
+                              
                                </>
                                }
                                 
@@ -49,6 +50,9 @@ const Dashboard = () => {
                                         </Link>
                                         <Link to={`${url}/addNewProduct`}>
                                             <li className="dashboard-menu">Add New Product</li>
+                                        </Link>
+                                        <Link to={`${url}/manageAllOrders`}>
+                                            <li className="dashboard-menu">Manage All Orders</li>
                                         </Link>
 
                                     </>
@@ -86,6 +90,9 @@ const Dashboard = () => {
                             </Route>
                             <Route exact path={`${path}/addNewProduct`}>
                              <AddNewProduct></AddNewProduct>
+                            </Route>
+                            <Route exact path={`${path}/manageAllOrders`}>
+                             <ManageAllOrders></ManageAllOrders>
                             </Route>
                         </Switch>
                     </div>

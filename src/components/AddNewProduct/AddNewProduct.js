@@ -1,11 +1,12 @@
 import React from 'react';
-import { Alert } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import './AddNewProduct.css'
 
 
 const AddNewProduct = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
+       
         fetch('http://localhost:5000/addNewProduct',{
             method: "POST",
             headers:{
@@ -26,9 +27,11 @@ const AddNewProduct = () => {
 
     return (
         <div>
-            <h2>Add a new product</h2>
+            <h2  className="heading">Add a new product</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form 
+            className="add-product-form"
+             onSubmit={handleSubmit(onSubmit)}>
                 <input
                     required
                     placeholder="Product Name"
@@ -51,7 +54,7 @@ const AddNewProduct = () => {
                     {...register("price")}
                 /> <br />
 
-                <input type="submit" />
+                <input className="btn btn-success" type="submit" />
             </form>
         </div>
     );

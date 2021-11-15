@@ -10,9 +10,7 @@ const SignUp = () => {
     const history = useHistory();
     const location = useLocation();
 
-   
 
-    //from guru
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -27,7 +25,7 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         signInUsingGoogle(location, history)
     }
-////////////////////////////
+
   
     return (
         <div className="login-container">

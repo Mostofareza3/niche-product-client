@@ -17,7 +17,7 @@ const AllProducts = () => {
             })
     }, [])
     return (
-        <div className="margin-t">
+        <div className="all-product-container">
             <h2 className="heading">Available All Products</h2>
             <div className="products-container container justify-content-center row">
            
@@ -27,11 +27,10 @@ const AllProducts = () => {
                             <img width="100%" src={product.img} alt="" />
                         </div>
                         <div>
-                            <h4>{product.name}</h4>
+                            <h4 className="highlight">{product.name}</h4>
                             <p>{product.description}</p>
                             <h5>Price: ${product.price}</h5>
-                           {
-                               !admin &&
+                          
                                  <Link to={`/placeOrder/${product._id}`}>
                                <Button
                                 className="btn btn-success">
@@ -39,7 +38,7 @@ const AllProducts = () => {
                                     </Button>
 
                            </Link>
-                           }
+                           
 
                         </div>
                     </div>)
