@@ -6,7 +6,7 @@ const ManageAllProducts = () => {
     const [isDelete, setIsDelete] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://quiet-dawn-43980.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data);
@@ -15,7 +15,7 @@ const ManageAllProducts = () => {
     }, [isDelete]);
     const handleDelete =(id) =>{
         window.confirm("Are you sure to delete?")
-        fetch(`http://localhost:5000/products/delete/${id}`,{
+        fetch(`https://quiet-dawn-43980.herokuapp.com/products/delete/${id}`,{
             method: "DELETE",
             headers:{
                 "content-type" : "application/json"

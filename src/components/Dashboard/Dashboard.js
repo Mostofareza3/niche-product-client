@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch, Route, Link, useRouteMatch, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import AddNewProduct from "../AddNewProduct/AddNewProduct";
@@ -13,7 +13,7 @@ import ManageAllOrders from "./ManageAllOrders/ManageAllOrders";
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const { user, admin, logOut } = useAuth();
+    const { admin, logOut } = useAuth();
     return (
         <div className="margin-t">
             <div className="dashboard-container">

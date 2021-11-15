@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [deleteCount, setDeleteCount] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders?email=${user?.email}`)
+        fetch(`https://quiet-dawn-43980.herokuapp.com/myOrders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyOrders(data)
@@ -18,7 +18,7 @@ const MyOrders = () => {
 
     const handleDelete = (id)=>{
         window.confirm('Are you sure to delete?')
-        fetch(`http://localhost:5000/deleteOrder/:${id}/?email=${user?.email}`,{
+        fetch(`https://quiet-dawn-43980.herokuapp.com/deleteOrder/:${id}/?email=${user?.email}`,{
             method:"DELETE",
             headers:{
                 "content-type": "application/json"

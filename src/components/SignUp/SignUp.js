@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
 
-    const { signUpWithEmailPassword, signInUsingGoogle, user, error } = useAuth();
+    const { signUpWithEmailPassword, signInUsingGoogle, error } = useAuth();
     const [loginData, setLoginData] = useState({});
 
     const history = useHistory();

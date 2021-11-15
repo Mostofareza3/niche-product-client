@@ -13,7 +13,6 @@ const useFirebase = () => {
     const [error, setError] = useState("");
     let [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
-    const [token, setToken] = useState('');
 
     const signInUsingGoogle = (location, history) => {
         setIsLoading(true)
@@ -91,7 +90,6 @@ const useFirebase = () => {
                 setUser(user);
                 getIdToken(user)
                     .then(idToken => {
-                        setToken(idToken);
                     })
             } else {
                 setUser({})
@@ -102,14 +100,14 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://quiet-dawn-43980.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user?.email])
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://quiet-dawn-43980.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

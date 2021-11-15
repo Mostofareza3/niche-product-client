@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allOrders`)
+        fetch(`https://quiet-dawn-43980.herokuapp.com/allOrders`)
             .then(res => res.json())
             .then(data => {
                 setAllOrders(data)
@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
     }, [updateCount,clear]);
 
     const handleUpdateStatus = (id)=>{
-       fetch(`http://localhost:5000/allOrders/${id}`,{
+       fetch(`https://quiet-dawn-43980.herokuapp.com/allOrders/${id}`,{
            method: "PUT",
            headers:{
                "content-type": "application/json"
@@ -33,7 +33,7 @@ const ManageAllOrders = () => {
 
     };
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/clearOrder/${id}`,{
+        fetch(`https://quiet-dawn-43980.herokuapp.com/clearOrder/${id}`,{
             method: "DELETE",
             headers: {
                 "content-type" : "application/json"

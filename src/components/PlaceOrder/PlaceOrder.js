@@ -17,7 +17,7 @@ const PlaceOrder = () => {
     const onSubmit = data => {
         data.status= "pending";
         const {_id, ...rest} = data;
-        fetch(`http://localhost:5000/addOrder`,{
+        fetch(`https://quiet-dawn-43980.herokuapp.com/addOrder`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const PlaceOrder = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/placeOrder/${id}`)
+        fetch(`https://quiet-dawn-43980.herokuapp.com/placeOrder/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
