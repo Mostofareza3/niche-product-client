@@ -10,5 +10,4 @@ __User Here (features)__
 5. React-Rating.
 6. React-hook-form
 
-## Live Site Link:
-[Bike STORE](https://assingment12-15c07.web.app/home)
+## Live Site Link: https://assingment12-15c07.web.app/home
