@@ -6,6 +6,7 @@ import './AddNewProduct.css'
 const AddNewProduct = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
+        console.log(data)
        
         fetch('https://quiet-dawn-43980.herokuapp.com/addNewProduct',{
             method: "POST",
